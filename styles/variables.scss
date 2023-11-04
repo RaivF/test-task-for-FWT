@@ -1,0 +1,33 @@
+///////////////////////////////////          BREAKPOINTS
+
+$mobile: 769px;
+$tablet: 1025px;
+$desktop: 1441px;
+
+//Mixins //----------PC FIRST
+@mixin max_custom($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+@mixin max_mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+@mixin max_tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin max_desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+:export {
+  mobile: $mobile;
+  tablet: $tablet;
+  desktop: $desktop;
+}

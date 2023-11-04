@@ -1,0 +1,90 @@
+.mainContainerWithPainting {
+  display: flex;
+  margin: 15px auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 3s;
+  aspect-ratio: 3/2;
+}
+
+.painting {
+  position: relative;
+  width: 360px;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  transition: transform 1s;
+}
+
+
+
+
+.paintingDescription {
+  background: rgba(255, 255, 255, 0.75) ;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+  border-bottom-left-radius:8px ;
+  border-bottom-right-radius:8px ;
+}
+
+
+
+.painting img {
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.descName {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-left: 2rem;
+  color: black;
+}
+
+.descLocation, .descCreated, .descAuthor {
+  color: black;
+  margin-left: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1
+}
+.hiddenDescription{
+  width: 100%;
+  height: 10px;
+
+}
+.hiddenDescription span{
+  display: none;
+
+}
+.painting:hover .hiddenDescription{
+  height: 70px;
+}
+.painting:hover .hiddenDescription span{
+
+  display: block;
+
+}
+
+@media (max-width: 410px) {
+  .painting {
+    position: relative;
+    width: 320px;
+    height: 235px;
+    margin: 0px 0px 0px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    transition: transform 1s;
+  }
+}

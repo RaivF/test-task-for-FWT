@@ -1,0 +1,46 @@
+.container{
+  min-height: 100vh;
+  max-width:1366px;
+  margin: 0 auto;
+
+}
+.test{
+  display: flex;
+  flex-direction: column;
+}
+.navButton{
+  max-width: 280px;
+  height: 41px;
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-left:110px ;
+
+}
+.navButton button{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+
+}
+.navButton span{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navButtonFirst{
+  border-bottom-left-radius:8px ;
+  border-top-left-radius:8px ;
+
+}
+.navButtonLast{
+  border-bottom-right-radius:8px ;
+  border-top-right-radius:8px ;
+}

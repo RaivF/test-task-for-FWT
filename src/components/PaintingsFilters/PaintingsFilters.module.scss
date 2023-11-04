@@ -1,0 +1,36 @@
+.paintingsFilters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.paintingsFiltersInput, .paintingsFiltersSelect {
+  width: 265px;
+  height: 45px;
+  margin: 13px;
+  border-radius: 8px;
+  border: 1px solid #a09c9c;
+}
+
+
+.paintingsFiltersSelect {
+  select, option {
+    padding-top: 20px;
+    border-radius: 20px;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+.paintingsFiltersSelect:hover {
+  border-color: #888;
+}
+
+.paintingsFiltersSelect:focus {
+  outline: none;
+  border-color: gray;
+}
