@@ -65,12 +65,12 @@ const HomePage: FC = () => {
   const { data: paintings, isFetching } = useFetchPaintings({
     page,
   })
-  console.log("paintings " + paintings)
+
 
   return (
     <div className={styles.container}>
 
-      <PaintingsFilters paintings={paintings} authors={authors} locations={locations}/>
+      <PaintingsFilters paintings={paintings || undefined} authors={authors || undefined} locations={locations || undefined}/>
       <div className={styles.test}>
       <ListCardsPaintings paintings={paintings} authors={authors} locations={locations}/>
 

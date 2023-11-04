@@ -3,11 +3,9 @@ import Image from 'next/image';
 import styles from './Header.module.scss'
 import Head from "next/head";
 import {useState} from "react";
-import {black} from "next/dist/lib/picocolors";
 
 const Header = () => {
     const [theme, setTheme] = useState<boolean>(true)
-    let img
     return (
         <div className={styles.header}>
             <Head>

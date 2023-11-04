@@ -1,5 +1,5 @@
 import { UseQueryResult, useQuery } from '@tanstack/react-query'
-import { axiosAPI } from './axiosInstances'
+import  axiosAPI  from './axiosInstances'
 
 export type ResultLocations = {
   id: number

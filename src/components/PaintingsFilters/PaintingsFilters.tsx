@@ -1,26 +1,24 @@
+import {FC} from "react";
 import {useRouter} from "next/router";
 import {ResultAuthors} from "@/src/api/useFetchAuthors";
 import {ResultLocations} from "@/src/api/useFetchLocations";
 import {ResultPaintings} from "@/src/api/useFetchPaintings";
-import {FC} from "react";
 import styles from "./PaintingsFilters.module.scss"
 
 type PaintingsFiltersTypes = {
-        authors: ResultAuthors[],
-        locations: ResultLocations[],
-        paintings: ResultPaintings[]
+        authors: ResultAuthors[] | undefined;
+        locations: ResultLocations[]  | undefined;
+        paintings: ResultPaintings[]   | undefined;
     }
 
 
-const PaintingsFilters: FC<PaintingsFiltersTypes> = ({authors, locations, paintings}) => {
+const PaintingsFilters: FC<PaintingsFiltersTypes> = ({authors , locations, paintings}) => {
     const router = useRouter()
 
     const handleInputChange = (event: any) => {
         const { name, value } = event.target
         router.push({ query: { ...router.query, [name]: value } })
     }
-
-
 
     return (
         <form placeholder={"name"} action="" className={styles.paintingsFilters}>

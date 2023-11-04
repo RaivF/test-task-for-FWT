@@ -1,20 +1,34 @@
 
 import styles from './ListCardsPaintings.module.scss'
-import useFetchAuthors from "@/src/api/useFetchAuthors";
-import useFetchLocations from "@/src/api/useFetchLocations";
+import  {ResultAuthors} from "@/src/api/useFetchAuthors";
+import  {ResultLocations} from "@/src/api/useFetchLocations";
 import CardPainting from "@/src/components/ListCardsPaintings/CardPainting/CardPainting";
+import {FC} from "react";
+import {ResultPaintings} from "@/src/api/useFetchPaintings";
 
-const ListCardsPaintings = ({paintings, authors,locations}) => {
-    console.log("painting " + paintings)
+type CardPaintingProps = {
+    authors: ResultAuthors[] | undefined;
+    locations: ResultLocations[]  | undefined;
+    paintings: ResultPaintings[]   | undefined;
+};
 
+
+const ListCardsPaintings: FC<CardPaintingProps> = ({paintings, authors,locations}) => {
+    let author: ResultAuthors | undefined
+    let location: ResultLocations | undefined
     return (
         <ul className={styles.listCards}>
             {paintings?.map(painting => {
-                console.log("painting " + painting)
-                const author = authors?.find(author => author?.id === painting?.authorId)
-                const location = locations?.find(location => location?.id === painting?.locationId)
+
+              if(authors != undefined){
+                  author = authors?.find(author => author.id === painting?.authorId);
+              }
+                if(locations != undefined){
+                    location = locations?.find(location => location.id === painting?.locationId);
+                }
                 return (
                     <CardPainting
+                        key={painting.id}
                         {...painting}
                         author={author}
                         location={location}

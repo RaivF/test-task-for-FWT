@@ -1,10 +1,9 @@
+import { useRouter } from 'next/router'
 import {
   UseQueryResult,
-  keepPreviousData,
   useQuery,
 } from '@tanstack/react-query'
-import { axiosAPI } from './axiosInstances'
-import { useRouter } from 'next/router'
+import  axiosAPI  from './axiosInstances'
 
 export type ResultPaintings = {
   authorId: number
@@ -45,8 +44,6 @@ const useFetchPaintings = ({
   page,
 }: GetPaintingsProps ={}): UseQueryResult<ResultPaintings[], Error> => {
   const { query } = useRouter()
-
-  console.log('query', query)
 
   return useQuery({
     queryKey: ['paintings', page, query],

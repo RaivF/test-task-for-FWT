@@ -1,7 +1,20 @@
 import styles from './CardPainting.module.scss'
 import Image from 'next/image'
-const CardPainting = ({created,imageUrl,name,author,location}) =>
-    (<li className={styles.mainContainerWithPainting}>
+
+
+interface CardPaintingProps {
+    created: string;
+    imageUrl: string;
+    name: string;
+    author: {id:number,name:string} | undefined;
+    location: {id:number,location:string} | undefined;
+}
+
+
+const CardPainting = ({created,imageUrl,name,author,location}:CardPaintingProps) => {
+
+    return(
+        <li className={styles.mainContainerWithPainting}>
          <div className={styles.painting}>
                 <Image
                     src={`https://test-front.framework.team${imageUrl}`}
@@ -17,6 +30,6 @@ const CardPainting = ({created,imageUrl,name,author,location}) =>
                   </div>
                 </div>
           </div>
-      </li>)
+      </li>)}
 
 export default CardPainting
