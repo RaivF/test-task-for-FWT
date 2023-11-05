@@ -4,14 +4,16 @@
   flex-wrap: wrap;
   margin-bottom: 15px;
 }
-
+.paintingsFiltersInput{
+  background-color: transparent;
+}
 .paintingsFiltersInput, .paintingsFiltersSelect {
   width: 265px;
   height: 45px;
   margin: 13px;
   border-radius: 8px;
   border: 1px solid #a09c9c;
-  background-color: transparent;
+
 }
 
 
