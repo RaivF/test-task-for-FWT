@@ -1,22 +1,22 @@
-import { UseQueryResult, useQuery } from '@tanstack/react-query'
-import  axiosAPI  from './axiosInstances'
+import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import axiosAPI from "./axiosInstances";
 
 export type ResultAuthors = {
-  id: number
-  name: string
-}
+  id: number;
+  name: string;
+};
 
-export const getAuthors = async (): Promise<ResultAuthors[] > => {
-  const { data } = await axiosAPI.get('authors')
+export const getAuthors = async (): Promise<ResultAuthors[]> => {
+  const { data } = await axiosAPI.get("authors");
 
-  return data
-}
+  return data;
+};
 
 const useFetchAuthors = (): UseQueryResult<ResultAuthors[], Error> => {
   return useQuery({
-    queryKey: ['authors'],
+    queryKey: ["authors"],
     queryFn: getAuthors,
-  })
-}
+  });
+};
 
-export default useFetchAuthors
+export default useFetchAuthors;

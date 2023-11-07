@@ -1,11 +1,11 @@
 module.exports = {
-  extends: ['next/core-web-vitals', 'prettier'],
-  plugins: ['@typescript-eslint'],
+  extends: ["next/core-web-vitals", "prettier"],
+  plugins: ["@typescript-eslint"],
   rules: {
-    'react/jsx-filename-extension': [
+    "react/jsx-filename-extension": [
       2,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+      { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
-    'react/react-in-jsx-scope': 'off',
+    "react/react-in-jsx-scope": "off",
   },
-}
+};

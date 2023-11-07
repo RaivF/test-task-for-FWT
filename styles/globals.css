@@ -88,7 +88,7 @@ input::-ms-clear {
 }
 
 button,
-input[type='submit'] {
+input[type="submit"] {
   display: inline-block;
   cursor: pointer;
   box-shadow: none;
