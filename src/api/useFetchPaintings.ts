@@ -20,7 +20,7 @@ export const getPaintings = async ({
   page,
   query = {},
 }: GetPaintingsProps): Promise<ResultPaintings[]> => {
-  const { created, authorId, locationId /* q */ } = query;
+  const { created, authorId, locationId ,q} = query;
   const { data } = await axiosAPI.get("paintings", {
     params: {
       ...Object.assign(
@@ -28,8 +28,8 @@ export const getPaintings = async ({
         page && { _page: page },
         created && { created },
         authorId && { authorId },
-        // q && { q },
         locationId && { locationId },
+          q && {q}
       ),
     },
   });

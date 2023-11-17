@@ -25,7 +25,11 @@ const PaintingsFilters: FC<PaintingsFiltersTypes> = ({
 
   return (
     <form placeholder={"name"} action="" className={styles.paintingsFilters}>
-      <input type="text" className={styles.paintingsFiltersInput} />
+      <input type="text"
+             className={styles.paintingsFiltersInput}
+             name={"q"}
+             onChange={handleInputChange}
+      />
       <select
         className={styles.paintingsFiltersSelect}
         name="authorId"
